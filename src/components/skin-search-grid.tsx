@@ -345,7 +345,7 @@ export default function SkinSearchGrid() {
       }
     }
     return Array.from(names).sort((a, b) => getWearRank(a) - getWearRank(b));
-  }, [afterRarity]);
+  }, [afterSkin]);
 
   const itensFiltrados = useMemo(() => {
     const filtered = afterSkin.filter((item) =>
@@ -368,7 +368,7 @@ export default function SkinSearchGrid() {
         sourceItem: wearMatch.item,
       };
     });
-  }, [afterRarity, wearFilter]);
+  }, [afterSkin, wearFilter]);
 
   const selectedLabel =
     CSGO_ENDPOINTS.find((endpoint) => endpoint.key === selectedEndpoint)?.label ?? "Itens";
@@ -636,7 +636,7 @@ export default function SkinSearchGrid() {
 
         {!loading && !error && itensFiltrados.length === 0 && (
           <p className="mt-20 text-center text-slate-500">
-            Nenhum item encontrado em {selectedLabel} para "{busca}"
+            Nenhum item encontrado em {selectedLabel} para &quot;{busca}&quot;
           </p>
         )}
       </div>
