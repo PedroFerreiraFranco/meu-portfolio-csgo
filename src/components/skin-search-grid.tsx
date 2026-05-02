@@ -424,9 +424,9 @@ export default function SkinSearchGrid() {
       <div className="mx-auto max-w-7xl">
         <header className="mb-10 text-center">
           <h1 className="mb-2 text-4xl font-black uppercase tracking-tighter text-white">
-            CS:GO <span className="text-orange-500">Inventory</span>
+            CS2 <span className="text-orange-500">Inventory</span>
           </h1>
-          <p className="text-slate-400">Filtre skins e outros itens da CSGO-API</p>
+          <p className="text-slate-400">Filtre skins e outros itens da <a href="https://github.com/ByMykel/CSGO-API" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300">CS:GO-API</a></p>
         </header>
 
         <div className="mb-8 flex flex-wrap gap-2">
