@@ -10,6 +10,26 @@ export const CSGO_ENDPOINTS = [
     url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/skins_not_grouped.json",
   },
   {
+    key: "keychains",
+    label: "Keychains",
+    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/keychains.json",
+  },
+  {
+    key: "crates",
+    label: "Crates",
+    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/crates.json",
+  },
+  {
+    key: "agents",
+    label: "Agents",
+    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/agents.json",
+  },
+  {
+    key: "music_kits",
+    label: "Music Kits",
+    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/music_kits.json",
+  },
+  {
     key: "stickers",
     label: "Stickers",
     url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/stickers.json",
@@ -18,36 +38,6 @@ export const CSGO_ENDPOINTS = [
     key: "sticker_slabs",
     label: "Sticker Slabs",
     url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/sticker_slabs.json",
-  },
-  {
-    key: "keychains",
-    label: "Keychains",
-    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/keychains.json",
-  },
-  {
-    key: "collections",
-    label: "Collections",
-    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/collections.json",
-  },
-  {
-    key: "crates",
-    label: "Crates",
-    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/crates.json",
-  },
-  {
-    key: "keys",
-    label: "Keys",
-    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/keys.json",
-  },
-  {
-    key: "collectibles",
-    label: "Collectibles",
-    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/collectibles.json",
-  },
-  {
-    key: "agents",
-    label: "Agents",
-    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/agents.json",
   },
   {
     key: "patches",
@@ -60,9 +50,19 @@ export const CSGO_ENDPOINTS = [
     url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/graffiti.json",
   },
   {
-    key: "music_kits",
-    label: "Music Kits",
-    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/music_kits.json",
+    key: "highlights",
+    label: "Highlights",
+    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/highlights.json",
+  },
+  {
+    key: "collections",
+    label: "Collections",
+    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/collections.json",
+  },
+  {
+    key: "keys",
+    label: "Keys",
+    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/keys.json",
   },
   {
     key: "base_weapons",
@@ -70,9 +70,9 @@ export const CSGO_ENDPOINTS = [
     url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/base_weapons.json",
   },
   {
-    key: "highlights",
-    label: "Highlights",
-    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/highlights.json",
+    key: "collectibles",
+    label: "Collectibles",
+    url: "https://raw.githubusercontent.com/ByMykel/CSGO-API/main/public/api/en/collectibles.json",
   },
 ] as const;
 

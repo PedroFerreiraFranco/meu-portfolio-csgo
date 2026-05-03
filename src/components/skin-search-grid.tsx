@@ -16,8 +16,8 @@ type DisplayItem = {
 };
 
 const ALL = "all";
-const NO_CSFLOAT_ENDPOINTS = new Set(["graffiti", "highlights", "collections", "keys", "base_weapons"]);
-const NO_STEAM_ENDPOINTS = new Set(["collections", "keys", "base_weapons"]);
+const NO_CSFLOAT_ENDPOINTS = new Set(["graffiti", "highlights", "collections", "keys", "base_weapons", "stickers", "sticker_slabs", "patches", "collectibles"]);
+const NO_STEAM_ENDPOINTS = new Set(["collections", "keys", "base_weapons", "collectibles"]);
 const WEAR_ORDER = [
   "Factory New",
   "Minimal Wear",
@@ -133,22 +133,21 @@ function getCsfloatBestUrl(item: CsgoApiItem | null, endpointKey?: string): stri
   if (!item) return null;
 
   const defIndex = item.def_index?.toString().trim();
-  if (!defIndex) return getCsfloatQueryUrl(item);
 
   if (endpointKey === "stickers" || endpointKey === "patches" || endpointKey === "sticker_slabs") {
-    return `https://csfloat.com/search?sticker_index=${defIndex}`;
+    return defIndex ? `https://csfloat.com/search?sticker_index=${defIndex}` : getCsfloatQueryUrl(item);
   }
 
   if (endpointKey === "keychains") {
-    return `https://csfloat.com/search?keychain_index=${defIndex}`;
+    return defIndex ? `https://csfloat.com/search?keychain_index=${defIndex}` : getCsfloatQueryUrl(item);
   }
 
   if (endpointKey === "music_kits") {
-    return `https://csfloat.com/search?music_kit_index=${defIndex}`;
+    return defIndex ? `https://csfloat.com/search?music_kit_index=${defIndex}` : getCsfloatQueryUrl(item);
   }
 
   if (endpointKey === "crates" || endpointKey === "agents" || endpointKey === "collectibles") {
-    return `https://csfloat.com/search?def_index=${defIndex}`;
+    return defIndex ? `https://csfloat.com/search?def_index=${defIndex}` : getCsfloatQueryUrl(item);
   }
 
   // skins — usa weapon_id como def_index + paint_index + floats
