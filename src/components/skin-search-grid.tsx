@@ -170,8 +170,15 @@ export default function SkinSearchGrid() {
   const [rarityFilter, setRarityFilter] = useState(ALL);
   const [skinFilter, setSkinFilter] = useState(ALL);
   const [wearFilter, setWearFilter] = useState(ALL);
+  const [page, setPage] = useState(0);
+
+  const PAGE_SIZE = 24;
 
   const isSkinEndpoint = selectedEndpoint === "skins_not_grouped";
+
+  useEffect(() => {
+    setPage(0);
+  }, [busca, skinClassFilter, weaponFilter, rarityFilter, skinFilter, wearFilter]);
 
   useEffect(() => {
     setOpenedItem(null);
@@ -181,6 +188,7 @@ export default function SkinSearchGrid() {
     setRarityFilter(ALL);
     setSkinFilter(ALL);
     setWearFilter(ALL);
+    setPage(0);
   }, [selectedEndpoint]);
 
   useEffect(() => {
@@ -587,7 +595,7 @@ export default function SkinSearchGrid() {
         )}
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {itensFiltrados.slice(0, 24).map((item) => (
+          {itensFiltrados.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE).map((item) => (
             <div
               key={item.id}
               className="group cursor-pointer overflow-hidden rounded-2xl border-b-4 bg-slate-900 shadow-xl transition-all duration-300 hover:-translate-y-2"
@@ -637,6 +645,31 @@ export default function SkinSearchGrid() {
           <p className="mt-20 text-center text-slate-500">
             Nenhum item encontrado em {selectedLabel} para &quot;{busca}&quot;
           </p>
+        )}
+
+        {!loading && itensFiltrados.length > PAGE_SIZE && (
+          <div className="mt-10 flex items-center justify-center gap-4">
+            <button
+              type="button"
+              disabled={page === 0}
+              onClick={() => { setPage((p) => p - 1); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              className="rounded-lg border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-semibold text-slate-300 transition-colors hover:border-slate-500 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              ← Anterior
+            </button>
+            <span className="text-sm text-slate-400">
+              Página {page + 1} de {Math.ceil(itensFiltrados.length / PAGE_SIZE)}
+              <span className="ml-2 text-slate-600">({itensFiltrados.length} itens)</span>
+            </span>
+            <button
+              type="button"
+              disabled={(page + 1) * PAGE_SIZE >= itensFiltrados.length}
+              onClick={() => { setPage((p) => p + 1); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              className="rounded-lg border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-semibold text-slate-300 transition-colors hover:border-slate-500 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Próximo →
+            </button>
+          </div>
         )}
       </div>
 
