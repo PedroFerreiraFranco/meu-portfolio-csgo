@@ -1,22 +1,33 @@
-# CS:GO Inventory (Next.js + TypeScript)
+# 🔫 CS2 Skin Explorer
 
-Projeto de portfólio/estudo consumindo a CSGO-API com:
+Uma aplicação web moderna para consulta de skins e itens do Counter-Strike, focada em performance e simplicidade.
 
-- **Next.js (App Router)**
+## 🚀 Tecnologias
+- **Next.js 15** (App Router)
 - **TypeScript**
 - **Tailwind CSS**
-- Busca dinâmica no cliente
-- Cards com estilos baseados em `skin.rarity.color`
+- **Lucide React**
 
-## Rodando localmente
+## 🔌 API
+Este projeto utiliza a [CSGO Skins API](https://github.com/ByMykel/CSGO-API) desenvolvida por **[ByMykel](https://github.com/ByMykel)**.
 
+## 🛠️ Instalação e Uso
+
+1. **Clonar o repositório:**
+```bash
+git clone [https://github.com/pedroferreirafranco/meu-portfolio-csgo.git](https://github.com/pedroferreirafranco/meu-portfolio-csgo.git)
+```
+2. **Instalar as dependências:**
 ```bash
 npm install
+```
+
+3. **Iniciar o servidor de desenvolvimento:**
+```bash
 npm run dev
 ```
 
-## Estrutura principal
+4. **Aceder à aplicação:**
+Abra o seu navegador em http://localhost:3000.
 
-- `src/app/page.tsx`: fetch dos dados no servidor (Server Component)
-- `src/components/skin-search-grid.tsx`: busca em tempo real no cliente (Client Component)
-- `src/lib/types.ts`: tipagens da skin
+Desenvolvido por [Pedro Ferreira Franco](https://github.com/PedroFerreiraFranco)
